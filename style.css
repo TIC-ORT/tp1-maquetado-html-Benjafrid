@@ -15,74 +15,83 @@ body {
 header {
   background-color: #ffd17d;
   display: flex;
-  padding: 30px;
+  padding: 40px 60px; 
   gap: 30px;
   align-items: center;
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 140px;  /* antes: 200px */
+  height: 140px; /* antes: 200px */
   background-color: #ffc458;
+  border-radius: 8px; /* opcional para dar un toque más suave */
 }
+
 
 .texto-header {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;            /* más espacio entre líneas */
+  margin-top: 10px;
+  padding-left: 20px;   /* empuja todo un poco a la derecha */
 }
 
 .linea {
   height: 10px;
   background-color: white;
-  width: 100%;
+  width: 30%;
 }
 
 .titulo {
-  width: 50%;
+  width: 30%;
   background-color: #ffb649;
   height: 15px;
 }
 
 .corta {
-  width: 30%;
+  width: 10%;
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 40px;
+  gap: 20px;           /* menos espacio entre tarjetas */
+  padding: 20px 30px;  /* menos espacio alrededor */
   background-color: white;
   flex: 1;
 }
 
+
 .tarjeta {
-  aspect-ratio: 1 / 1; /* mantiene proporción cuadrada */
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;           /* un poco menos de espacio */
   position: relative;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
 
 .tarjeta::before {
   content: '';
   width: 100%;
-  height: 10px;
+  height: 50px; /* más alto = más grueso */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.1); /* placeholder */
+  background-color: rgba(0, 0, 0, 0.1); /* se sobrescribe por clases de color */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
+
+
 .cuadro {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   opacity: 0.7;
 }
 
