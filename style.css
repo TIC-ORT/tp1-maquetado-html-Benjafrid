@@ -1,112 +1,131 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Estilos generales */
-  body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Header */
-  header {
-    background-color: #ffd17d;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* Imagen en header */
-  header::before {
-    content: '';
-    width: 80px;
-    height: 80px;
-    background-color: #ffc458;
-    display: block;
-  }
-  
-  /* Texto en header */
-  header::after {
-    content: '';
-    flex: 1;
-    height: 60px;
-    background: linear-gradient(
-      to bottom,
-      #ffb649 10%,
-      white 10%,
-      white 30%,
-      white 30%,
-      white 50%,
-      white 50%,
-      white 70%,
-      white 70%,
-      white 90%
-    );
-  }
-  
-  /* Main */
-  main {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 40px;
-    background-color: white;
-  }
-  
-  /* Tarjetas */
-  .tarjeta {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .tarjeta::before {
-    content: '';
-    width: 50px;
-    height: 50px;
-    background-color: inherit;
-    opacity: 0.7;
-  }
-  
-  /* Colores fijos */
-  .rojo {
-    background-color: #e43a3a;
-  }
-  
-  .celeste {
-    background-color: #8dfff6;
-  }
-  
-  .amarillo {
-    background-color: #ffd166;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #e8e8e8;
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 0;
-  }
-  
-  footer div {
-    width: 150px;
-    background: repeating-linear-gradient(
-      to bottom,
-      #cccccc,
-      #cccccc 10px,
-      white 10px,
-      white 20px
-    );
-    height: 80px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #ffd17d;
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background-color: #ffc458;
+}
+
+.texto-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linea {
+  height: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+.titulo {
+  width: 50%;
+  background-color: #ffb649;
+  height: 15px;
+}
+
+.corta {
+  width: 30%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+  background-color: white;
+  flex: 1;
+}
+
+.tarjeta {
+  aspect-ratio: 1 / 1; /* mantiene proporción cuadrada */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  padding-top: 15px;
+}
+
+
+.tarjeta::before {
+  content: '';
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.1); /* placeholder */
+}
+
+.cuadro {
+  width: 60px;
+  height: 60px;
+  opacity: 0.7;
+}
+
+/* Colores */
+.celeste {
+  background-color: #d8f2f7;
+}
+.celeste::before,
+.celeste .cuadro {
+  background-color: #a8e1ea;
+}
+
+.coral {
+  background-color: #ffa68d;
+}
+.coral::before,
+.coral .cuadro {
+  background-color: #f8866b;
+}
+
+.amarillo {
+  background-color: #ffd166;
+}
+.amarillo::before,
+.amarillo .cuadro {
+  background-color: #ffbd2f;
+}
+
+footer {
+  background-color: #e8e8e8;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+}
+
+.columna {
+  width: 150px;
+  height: 80px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #cccccc,
+    #cccccc 10px,
+    white 10px,
+    white 20px
+  );
+}
