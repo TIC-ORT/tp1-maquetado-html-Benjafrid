@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -12,94 +11,131 @@ body {
   flex-direction: column;
 }
 
+/* Barra de navegación */
+nav {
+  background-color: #7dd1d8;
+  height: 50px;
+  display: flex;
+  position: relative;
+}
+
+.nav-left {
+  background-color: #f8866b;
+  width: 8%;
+  height: 100%;
+}
+
+.nav-center {
+  background-color: #f0f0f0;
+  width: 25%;
+  height: 100%;
+}
+
+.nav-right {
+  background-color: #d3d3d3;
+  width: 20%;
+  height: 100%;
+}
+
+.nav-controls {
+  position: absolute;
+  bottom: -15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.control {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.search-bar {
+  flex: 1;
+  height: 20px;
+  background-color: white;
+  max-width: 80%;
+  border-radius: 2px;
+}
+
+/* Header */
 header {
   background-color: #ffd17d;
   display: flex;
-  padding: 40px 60px; 
-  gap: 30px;
+  padding: 40px 60px;
+  gap: 120px;
   align-items: center;
 }
 
 .logo {
-  width: 140px;  /* antes: 200px */
-  height: 140px; /* antes: 200px */
+  width: 140px;
+  height: 140px;
   background-color: #ffc458;
-  border-radius: 8px; /* opcional para dar un toque más suave */
+  border-radius: 0;
 }
-
 
 .texto-header {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;            /* más espacio entre líneas */
+  gap: 16px;
   margin-top: 10px;
-  padding-left: 20px;   /* empuja todo un poco a la derecha */
 }
 
 .linea {
   height: 10px;
   background-color: white;
-  width: 30%;
+  width: 100%;
 }
 
 .titulo {
-  width: 30%;
+  width: 40%;
   background-color: #ffb649;
   height: 15px;
+  margin-bottom: 10px;
 }
 
 .corta {
-  width: 10%;
+  width: 60%;
 }
 
+/* Main content */
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;           /* menos espacio entre tarjetas */
-  padding: 20px 30px;  /* menos espacio alrededor */
+  gap: 40px;
+  padding: 60px 120px;
   background-color: white;
   flex: 1;
 }
 
-
 .tarjeta {
   aspect-ratio: 1 / 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 8px;           /* un poco menos de espacio */
-  position: relative;
-  padding-top: 12px;
+  align-items: center;
+  border-radius: 0;
+  padding: 0;
 }
-
 
 .tarjeta::before {
-  content: '';
-  width: 100%;
-  height: 50px; /* más alto = más grueso */
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.1); /* se sobrescribe por clases de color */
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  display: none;
 }
-
-
 
 .cuadro {
-  width: 120px;
-  height: 120px;
-  opacity: 0.7;
+  width: 40%;
+  height: 40%;
+  opacity: 1;
 }
 
-/* Colores */
 .celeste {
   background-color: #d8f2f7;
 }
-.celeste::before,
+
 .celeste .cuadro {
   background-color: #a8e1ea;
 }
@@ -107,7 +143,7 @@ main {
 .coral {
   background-color: #ffa68d;
 }
-.coral::before,
+
 .coral .cuadro {
   background-color: #f8866b;
 }
@@ -115,11 +151,12 @@ main {
 .amarillo {
   background-color: #ffd166;
 }
-.amarillo::before,
+
 .amarillo .cuadro {
   background-color: #ffbd2f;
 }
 
+/* Footer */
 footer {
   background-color: #e8e8e8;
   display: flex;
@@ -129,12 +166,24 @@ footer {
 
 .columna {
   width: 150px;
-  height: 80px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #cccccc,
-    #cccccc 10px,
-    white 10px,
-    white 20px
-  );
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.columna-header {
+  height: 20px;
+  background-color: #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.columna-linea {
+  height: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+.columna-linea.corta {
+  width: 60%;
 }
